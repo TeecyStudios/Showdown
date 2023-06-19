@@ -55,6 +55,7 @@
                         <span v-show="round > 0">{{ showdown ? 'Showdown' : 'Round ' + round }}</span>
                         <br />
                         <br />
+                        <span>{{ picks }}</span>
                     </p>
                     <div v-show="!showdown && playing">
                         <div class="row">
@@ -86,7 +87,8 @@
                                     Opponent
                                 </div>
                                 
-                                <div class="col-sm-2 offset-sm-2" v-for="(oppPick, idx) in opponentPicks" v-bind:class="oppPick == picks[idx] ? 'tied' : (picks[idx] > oppPick ? 'disabled' : 'picked')">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-2 offset-sm-1" v-for="(oppPick, idx) in opponentPicks" v-bind:class="oppPick == picks[idx] ? 'tied' : (picks[idx] > oppPick ? 'disabled' : 'picked')">
                                     {{ oppPick }}
                                 </div>
                             </div>
@@ -96,7 +98,8 @@
                                     Player
                                 </div>
                                 
-                                <div class="col-sm-2 offset-sm-2" v-for="(pick, idx) in picks" v-bind:class="pick == opponentPicks[idx] ? 'tied' : (pick > opponentPicks[idx] ? 'picked' : 'disabled')">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-2 offset-sm-1" v-for="(pick, idx) in picks" v-bind:class="pick == opponentPicks[idx] ? 'tied' : (pick > opponentPicks[idx] ? 'picked' : 'disabled')">
                                     {{ pick }}
                                 </div>
                             </div>
