@@ -77,9 +77,7 @@
 
                     <div v-show="showdown && playing">
                         <div v-show="waiting">
-                            Waiting on opponent
-                            <br />
-                            <a v-on:click="SkipWaiting()">Skip</a>
+                            <a v-on:click="SkipWaiting()">Skip waiting</a>
                         </div>
                         <div v-show="!waiting">
                             <div class="row">
@@ -92,20 +90,26 @@
                                     {{ oppPick }}
                                 </div>
                             </div>
+                            
+                            <br />
 
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    Player
-                                </div>
-                                
+                            <div class="row">                                
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-2 offset-sm-1" v-for="(pick, idx) in picks" v-bind:class="pick == opponentPicks[idx] ? 'tied' : (pick > opponentPicks[idx] ? 'picked' : 'disabled')">
                                     {{ pick }}
                                 </div>
+
+                                <div class="col-sm-12">
+                                    Player
+                                </div>
                             </div>
 
+                            <br /><br />
+
                             <span>{{ winner }} {{ (pScore > oScore ? pScore : oScore) + ' - ' + (pScore < oScore ? pScore : oScore) }} !</span>
-                            <br />
+                            
+                            <br /><br />
+                            
                             <button type="button" v-on:click="RestartGame()" class="btn btn-primary">Restart</button>
                         </div>
                     </div>
