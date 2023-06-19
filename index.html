@@ -106,7 +106,7 @@
 
                             <span>{{ winner }} {{ (pScore > oScore ? pScore : oScore) + ' - ' + (pScore < oScore ? pScore : oScore) }} !</span>
                             <br />
-                            <button type="button" v-on:click="RestartGame()">Restart</button>
+                            <button type="button" v-on:click="RestartGame()" class="btn btn-primary">Restart</button>
                         </div>
                     </div>
                 </div>
